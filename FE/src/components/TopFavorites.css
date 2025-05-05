@@ -1,0 +1,87 @@
+/* src/components/TopFavorites/TopFavorites.css */
+
+/* Assuming variables from a global scope or previous files */
+:root {
+    --primary-color: #1DB954;
+    --background-dark-secondary: #282828; /* Background for the container */
+    --text-light: #ffffff;
+    --text-muted: #b3b3b3;
+    --border-light: rgba(255, 255, 255, 0.1);
+  }
+  
+  .top-favorites-container {
+    background-color: var(--background-dark-secondary);
+    padding: 20px 25px; /* Padding top/bottom and left/right */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Initialize CSS counter for numbering */
+    counter-reset: top-fav-counter;
+  }
+  
+  .top-favorites-title {
+    color: var(--primary-color);
+    font-size: 1.4rem; /* Slightly smaller than dashboard titles maybe */
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light);
+    font-weight: 600;
+  }
+  
+  /* Optional list wrapper styling */
+  .top-favorites-list {
+    list-style: none; /* Remove default list styles if it were a ul/ol */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .top-favorite-item {
+    padding: 10px 5px; /* Base padding */
+    padding-left: 40px; /* Increased padding-left for number */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
+    position: relative; /* Needed for positioning the number */
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Style the number using CSS counters */
+  .top-favorite-item::before {
+    counter-increment: top-fav-counter; /* Increment counter for each item */
+    content: counter(top-fav-counter) "."; /* Display "1.", "2.", etc. */
+    position: absolute;
+    left: 5px; /* Position number near the left edge */
+    top: 10px; /* Align vertically with padding */
+    color: var(--text-muted); /* Muted color for the number */
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 25px; /* Fixed width for alignment */
+    text-align: right; /* Align number to the right */
+  }
+  
+  
+  .top-favorite-item:last-child {
+    border-bottom: none; /* No border on the last item */
+  }
+  
+  .top-favorite-item:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle hover background */
+  }
+  
+  /* Styling for Loading / Error / Empty States */
+  .top-favorites-loading,
+  .top-favorites-error,
+  .top-favorites-empty {
+    padding: 25px 5px;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  
+  .top-favorites-error {
+    color: #f44336; /* Red for errors */
+    font-style: normal;
+    font-weight: bold;
+  }

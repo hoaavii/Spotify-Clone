@@ -1,0 +1,298 @@
+/* src/pages/DiscoveryPage.css */
+
+/* --- Spotify Color Palette & Variables --- */
+:root {
+  --spotify-black: #121212; /* Main background */
+  --spotify-dark-gray: #181818; /* Slightly lighter background */
+  --spotify-gray: #282828; /* Card/element backgrounds */
+  --spotify-light-gray: #535353; /* Borders, subtle text */
+  --spotify-text: #ffffff; /* Primary text */
+  --spotify-text-subdued: #b3b3b3; /* Secondary text */
+  --spotify-green: #1db954; /* Accent color */
+  --spotify-green-hover: #1ed760;
+  --spotify-border-radius: 8px;
+  --spotify-card-hover: #3a3a3a;
+}
+
+/* --- Base Styles --- */
+.discovery-page {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Spotify uses Circular, fallback */
+  background-color: var(--spotify-black);
+  color: var(--spotify-text);
+  padding: 2rem;
+  min-height: 100vh; /* Ensure background covers full height */
+}
+
+/* --- Headings --- */
+.discovery-page h1,
+.discovery-page h2,
+.discovery-page h3 {
+  color: var(--spotify-text);
+  margin-bottom: 1rem;
+}
+
+.discovery-page h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2rem; /* Space above main title */
+}
+
+.discovery-page h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--spotify-light-gray);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.discovery-page h3 { /* Album titles */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--spotify-text-subdued);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* --- Links --- */
+.discovery-page a {
+  color: var(--spotify-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.discovery-page a:hover {
+  color: var(--spotify-green);
+  text-decoration: underline;
+}
+
+/* --- Search Form --- */
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  flex-grow: 1;
+  padding: 0.8rem 1rem;
+  background-color: var(--spotify-gray);
+  border: 1px solid var(--spotify-light-gray);
+  border-radius: 50px; /* Pill shape */
+  color: var(--spotify-text);
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-form input[type="text"]:focus {
+  border-color: var(--spotify-text);
+  box-shadow: 0 0 0 1px var(--spotify-text);
+}
+
+.search-form button {
+  padding: 0.7rem 1.5rem;
+  background-color: var(--spotify-green);
+  color: var(--spotify-black); /* Dark text on green button */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.search-form button:hover:not(:disabled) {
+  background-color: var(--spotify-green-hover);
+}
+
+.search-form button:disabled {
+  background-color: var(--spotify-light-gray);
+  color: var(--spotify-text-subdued);
+  cursor: not-allowed;
+}
+
+/* Clear button specific style */
+.search-form button[type="button"] {
+  background-color: var(--spotify-light-gray);
+  color: var(--spotify-text);
+}
+.search-form button[type="button"]:hover {
+  background-color: var(--spotify-text-subdued);
+}
+
+/* --- Filters --- */
+.discovery-filters {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1.5rem; /* Space between filter elements */
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--spotify-dark-gray); /* Slightly different background */
+  border-radius: var(--spotify-border-radius);
+  align-items: center;
+}
+
+.discovery-filters label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between label text and control */
+  color: var(--spotify-text-subdued);
+  font-size: 0.9rem;
+}
+
+/* Checkbox styling */
+.discovery-filters input[type="checkbox"] {
+  accent-color: var(--spotify-green); /* Color the checkmark */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.discovery-filters input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* Select dropdown styling */
+.discovery-filters select {
+  padding: 0.4rem 0.8rem;
+  background-color: var(--spotify-gray);
+  border: 1px solid var(--spotify-light-gray);
+  border-radius: 4px;
+  color: var(--spotify-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 150px; /* Give dropdowns some width */
+}
+
+.discovery-filters select:focus {
+  outline: none;
+  border-color: var(--spotify-text);
+}
+
+.small-note {
+  font-size: 0.8rem;
+  color: var(--spotify-text-subdued);
+  font-style: italic;
+}
+
+/* --- Top Favorites Section --- */
+.top-favorites-section {
+  margin-bottom: 2rem;
+}
+
+.top-favorites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 1rem;
+}
+
+.top-fav-item.card { /* Style the Link as a card */
+  background-color: var(--spotify-gray);
+  border-radius: var(--spotify-border-radius);
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+  display: flex; /* Align info and player */
+  flex-direction: column; /* Stack info above player */
+  gap: 0.8rem;
+  text-decoration: none; /* Remove underline from Link */
+}
+
+.top-fav-item.card:hover {
+  background-color: var(--spotify-card-hover);
+}
+
+/* --- General Track/Song Item Styling --- */
+.track-info {
+  display: flex;
+  flex-direction: column; /* Stack title and artist */
+  flex-grow: 1; /* Allow info to take available space */
+  overflow: hidden; /* Prevent text overflow */
+}
+
+.track-info strong { /* Song Title */
+  color: var(--spotify-text);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ... if title is too long */
+}
+
+.track-info span { /* Artist Name */
+  color: var(--spotify-text-subdued);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Style the embedded Player component (adjust if Player renders differently) */
+.top-fav-item .Player, /* Target Player within top favs */
+.song-item .Player {   /* Target Player within main list */
+  width: 100%; /* Make player take full width of its container */
+  margin-top: auto; /* Push player to bottom if needed */
+}
+
+/* Assuming Player renders an <audio> tag */
+.top-fav-item audio,
+.song-item audio {
+  width: 100%;
+  height: 40px; /* Adjust height as needed */
+  filter: invert(1) grayscale(1) brightness(1.5); /* Style default controls for dark theme */
+}
+
+
+/* --- Discovery List / Search Results --- */
+.discovery-page section:not(.top-favorites-section) { /* Target album sections */
+  margin-bottom: 2rem;
+}
+
+.track-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 1rem;
+}
+
+.song-item { /* Style the Link */
+  background-color: var(--spotify-dark-gray); /* Slightly different from top favs */
+  border-radius: var(--spotify-border-radius);
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.song-item:hover {
+  background-color: var(--spotify-gray); /* Hover is same as card bg */
+}
+
+/* --- Separator --- */
+.discovery-page hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--spotify-light-gray);
+  margin: 2.5rem 0;
+}
+
+/* --- Loading/Error States --- */
+.discovery-page p { /* General paragraph styling for loading/empty messages */
+  color: var(--spotify-text-subdued);
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.error {
+  color: #ff6a6a; /* Lighter red for dark background */
+  background-color: rgba(255, 106, 106, 0.1); /* Subtle red background */
+  border: 1px solid #ff6a6a;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-style: normal; /* Override italic */
+}
+

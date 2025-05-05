@@ -1,0 +1,97 @@
+/* UserDashboard.css */
+
+.user-dashboard {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-width: 800px; /* Wider max-width for content */
+    margin: 40px auto; /* Center on page */
+    padding: 20px 30px; /* More horizontal padding */
+    background-color: #f4f7f6; /* Light grey background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    color: #333;
+  }
+  
+  .user-dashboard h1 {
+    font-size: 2em;
+    color: #004d40; /* Dark Teal */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #d0d9d5; /* Slightly darker separator */
+  }
+  
+  .user-dashboard section {
+    margin-bottom: 35px; /* Space between sections */
+    background-color: #ffffff; /* White background for sections */
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+  
+  .user-dashboard section:last-of-type {
+    margin-bottom: 10px; /* Less margin after the last section */
+  }
+  
+  .user-dashboard h2 {
+    font-size: 1.5em;
+    color: #00796b; /* Teal */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  /* Styling for each item (song) in the lists */
+  .user-dashboard section > div {
+    border: 1px solid #e8e8e8;
+    background-color: #fdfdfd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    display: flex; /* Use flex for layout */
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Space between title/artist and player */
+  }
+  
+  /* Styling for the song title */
+  .user-dashboard section > div strong {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #222;
+  }
+  
+  /* Basic styling assumption for the Player component - assuming it renders an <audio> tag */
+  /* You might need to adjust this based on the actual Player component's output */
+  .user-dashboard section > div .player-component, /* If Player has a class */
+  .user-dashboard section > div audio           /* Or targets a standard audio tag */
+  {
+    width: 100%; /* Make player take full width */
+    display: block; /* Ensure it behaves as a block element */
+    margin-top: 5px; /* Add a little extra space above the player if needed */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .user-dashboard {
+      margin: 20px;
+      padding: 15px 20px;
+    }
+  
+    .user-dashboard h1 {
+      font-size: 1.8em;
+    }
+  
+    .user-dashboard h2 {
+      font-size: 1.3em;
+    }
+  
+    .user-dashboard section {
+      padding: 20px;
+    }
+  
+    .user-dashboard section > div {
+      padding: 12px;
+    }
+  }

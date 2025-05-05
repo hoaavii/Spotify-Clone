@@ -1,0 +1,13 @@
+.video-player {
+    width: 100%;              /* fill parent width */
+    max-width: 800px;         /* optional max size */
+    height: auto;             /* maintain aspect ratio */
+    border-radius: 8px;       /* rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background-color: #000;   /* black background behind video */
+    overflow: hidden;
+  }
+  .video-player::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  

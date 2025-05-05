@@ -1,0 +1,201 @@
+/* src/components/Dashboard/Dashboard.css */
+
+/* --- Optional: Define or import root variables --- */
+:root {
+    --primary-color: #1DB954;
+    --background-dark: #121212; /* Main dashboard background - very dark */
+    --background-dark-secondary: #1e1e1e; /* Slightly lighter for elements */
+    --text-light: #ffffff;
+    --text-muted: #b3b3b3; /* Lighter muted for dark bg */
+    --border-light: rgba(255, 255, 255, 0.1);
+    --header-height: 60px; /* Adjust based on your actual Header height */
+  }
+  
+  /* --- Main Dashboard Container --- */
+  .dashboard-container {
+    padding: 25px 5%; /* Padding around the content */
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    min-height: calc(100vh - var(--header-height)); /* Fill height below header */
+    box-sizing: border-box;
+  }
+  
+  /* --- Loading / Error States --- */
+  .loading-indicator,
+  .error-message { /* Assuming error message uses this class from component */
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    min-height: 300px; /* Ensure message takes some space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .error-message {
+    color: #f44336; /* Red color for errors */
+    font-weight: bold;
+  }
+  
+  /* --- Headings --- */
+  .dashboard-container > h1 {
+    color: var(--text-light);
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .media-section h2 {
+    color: var(--primary-color);
+    margin-top: 40px; /* Space above section titles */
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+  }
+  
+  /* --- User Actions Section (Album Creator, Favorites) --- */
+  .user-actions {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto next line */
+    gap: 30px; /* Space between items */
+    margin-bottom: 40px;
+  }
+  
+  /* Style the direct children (AlbumCreator, FavoriteSongs) */
+  /* Assumes these components have their own root container */
+  .user-actions > * {
+    flex: 1; /* Allow items to grow */
+    min-width: 320px; /* Minimum width before wrapping */
+    /* Ensure components have consistent background/padding from their own CSS */
+  }
+  
+  /* --- Media Sections (Songs, Videos) --- */
+  .media-section {
+    margin-bottom: 40px;
+  }
+  
+  /* --- Individual Media Item Styling --- */
+  .media-item {
+    background-color: var(--background-dark-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Darker shadow on dark bg */
+    display: flex;
+    flex-direction: column; /* Stack info, player, button vertically */
+    gap: 18px; /* Space between elements inside the item */
+  }
+  
+  /* Song/Video specific classes (if needed for minor tweaks) */
+  .song-item {
+    /* border-left: 3px solid var(--primary-color); */ /* Example accent */
+  }
+  .video-item {
+    /* border-left: 3px solid #ffcc00; */ /* Example accent */
+  }
+  
+  /* --- Media Info (Title, Artist) --- */
+  .media-info {
+    font-size: 1.15rem; /* Slightly larger title */
+    line-height: 1.4;
+  }
+  
+  .media-info strong {
+    color: var(--text-light);
+    font-weight: 600; /* Bold title */
+    display: block; /* Put title on its own line */
+    margin-bottom: 4px;
+  }
+  
+  .artist-name {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+  
+  /* --- Player Components --- */
+  /* Assuming Player and VideoPlayer have their own CSS setting width: 100% */
+  /* Add margin if needed directly or via a wrapper if their CSS doesn't handle it */
+  .media-item .audio-player, /* Target Player component if it has this class */
+  .media-item .video-player-container { /* Target VideoPlayer if it has this class */
+     width: 100%; /* Ensure players take full width */
+     margin-top: 5px; /* Optional extra spacing */
+  }
+  
+  /* --- Download Button within Media Item --- */
+  .media-item .download-button {
+    align-self: flex-start; /* Align button to the start (left) */
+    margin-top: 5px; /* Add a little space above */
+  }
+  
+  /* --- Empty State Message --- */
+  .media-section > p {
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* --- Chat Component Styling --- */
+  /* Assuming Chat component has a root div with class "chat-container" */
+  .dashboard-container > .chat-container {
+    margin-top: 40px;
+    /* Add specific layout rules if needed, e.g., width, max-height */
+    /* Example:
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      padding: 20px 3%;
+    }
+  
+    .dashboard-container > h1 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+  
+    .media-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+  
+    .user-actions {
+        gap: 20px; /* Reduce gap */
+    }
+  
+    .user-actions > * {
+        min-width: 280px; /* Adjust min-width */
+    }
+  
+    .media-item {
+      padding: 15px;
+      gap: 15px;
+    }
+  
+    .media-info {
+        font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+      .dashboard-container > h1 {
+          font-size: 1.6rem;
+      }
+      .media-section h2 {
+          font-size: 1.3rem;
+      }
+      .user-actions > * {
+          min-width: 100%; /* Stack user action components fully */
+          flex-basis: 100%;
+      }
+  }

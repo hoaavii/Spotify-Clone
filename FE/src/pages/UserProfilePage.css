@@ -1,0 +1,93 @@
+/* src/pages/UserProfilePage.css */
+
+/* Main container for the user profile page */
+.user-profile-page {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    max-width: 800px; /* Limit width for better readability */
+    margin: 2rem auto; /* Center the content with margin top/bottom */
+    padding: 1.5rem;
+    background-color: #f9f9f9; /* Light background for the page */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    color: #333; /* Default text color */
+  }
+  
+  /* Welcome heading */
+  .user-profile-page h1 {
+    text-align: center;
+    color: #2c3e50; /* Darker color for main heading */
+    margin-bottom: 2rem; /* Space below the heading */
+    font-size: 1.8rem; /* Larger font size */
+  }
+  
+  /* Section headings (Subscription, Your Favorites) */
+  .user-profile-page h2 {
+    color: #34495e; /* Slightly lighter than h1 */
+    border-bottom: 2px solid #ecf0f1; /* Underline for separation */
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem; /* Space above section heading */
+    margin-bottom: 1rem; /* Space below section heading */
+    font-size: 1.4rem;
+  }
+  
+  /* Styling for sections */
+  .user-profile-page section {
+    margin-bottom: 1.5rem; /* Space between sections */
+    background-color: #ffffff; /* White background for sections */
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+  }
+  
+  /* Paragraph text within sections */
+  .user-profile-page p {
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 0.5rem; /* Space below paragraphs */
+    color: #555; /* Standard text color */
+  }
+  
+  /* Emphasized text (plan name, favorite count) */
+  .user-profile-page strong {
+    color: #2980b9; /* A distinct color for emphasized text */
+    font-weight: 600; /* Slightly bolder */
+  }
+  
+  /* Styling for the favorites list */
+  .favorites-summary ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove default padding */
+    margin-top: 0.5rem;
+  }
+  
+  /* Individual list items in the favorites list */
+  .favorites-summary li {
+    padding: 0.5rem 0.2rem; /* Padding top/bottom and slight left/right */
+    border-bottom: 1px dashed #eee; /* Separator line between items */
+    color: #666; /* Slightly muted text color for list items */
+  }
+  
+  /* Remove border from the last list item */
+  .favorites-summary li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Styling for error messages */
+  .error {
+    color: #c0392b; /* Red color for errors */
+    background-color: #fdd; /* Light red background */
+    border: 1px solid #c0392b;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Styling for loading message (optional, uses default paragraph styling mostly) */
+  /* You can add specific styles if needed, e.g., text-align: center; */
+  /* .loading-message { */
+  /* text-align: center; */
+  /* padding: 1rem; */
+  /* color: #777; */
+  /* } */

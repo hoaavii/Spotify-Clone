@@ -1,0 +1,200 @@
+/* src/components/Header/Header.css */
+
+/* --- Base Header Layout --- */
+.app-header {
+    display: flex;
+    justify-content: space-between; /* Pushes logo, nav, and actions apart */
+    align-items: center; /* Vertically aligns items */
+    padding: 15px 5%; /* Padding top/bottom and left/right */
+    background-color: #191414; /* Dark background (Spotify-like) */
+    color: #ffffff; /* Light text color */
+    position: sticky; /* Makes header stick to top */
+    top: 0;
+    left: 0;
+    width: 90%; /* 100% width minus left/right padding */
+    z-index: 1000; /* Ensures header stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  /* --- Logo Styling --- */
+  .logo-container {
+    /* No specific styles needed unless customizing alignment */
+  }
+  
+  .logo-link {
+    font-size: 1.8rem; /* Larger font size for the logo */
+    font-weight: bold;
+    color: #1DB954; /* Spotify green color */
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .logo-link:hover {
+    color: #1ed760; /* Slightly brighter green on hover */
+  }
+  
+  /* --- Navigation Links --- */
+  .navigation {
+    display: flex;
+    gap: 30px; /* Space between navigation links */
+    flex-grow: 1; /* Allows navigation to take up available space */
+    justify-content: center; /* Center navigation links */
+    margin: 0 20px; /* Add some margin around the nav area */
+  }
+  
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative; /* Needed for underline effect */
+    transition: color 0.2s ease;
+  }
+  
+  .nav-link:hover {
+    color: #1DB954; /* Highlight color on hover */
+  }
+  
+  /* Optional: Underline effect on hover */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Start with no width */
+    height: 2px;
+    background-color: #1DB954;
+    transition: width 0.3s ease; /* Animate the width */
+  }
+  
+  .nav-link:hover::after {
+    width: 100%; /* Expand width on hover */
+  }
+  
+  /* --- User Actions (Right Side) --- */
+  .user-actions {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Space between items in the user actions area */
+  }
+  
+  /* --- Logged-in State Styling --- */
+  .welcome-message {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly muted white */
+  }
+  
+  .welcome-message strong {
+    font-weight: bold;
+    color: #ffffff; /* Make username stand out */
+  }
+  
+  /* --- Button Base Styles (Can be shared with other components) --- */
+  .btn {
+    padding: 8px 18px;
+    border-radius: 50px; /* Pill shape */
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
+    border: 1px solid transparent; /* Base border */
+    font-size: 0.9rem;
+  }
+  
+  .btn:hover {
+    transform: translateY(-1px); /* Subtle lift effect */
+  }
+  
+  /* --- Specific Button Styles --- */
+  .btn-logout {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.5); /* Muted border */
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .btn-logout:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+  
+  .btn-login {
+    background-color: #ffffff; /* White background */
+    color: #191414; /* Dark text */
+    border-color: #ffffff;
+  }
+  
+  .btn-login:hover {
+    background-color: #f0f0f0; /* Slightly off-white on hover */
+    border-color: #f0f0f0;
+  }
+  
+  .btn-register {
+    background-color: #1DB954; /* Primary green */
+    color: #ffffff;
+    border-color: #1DB954;
+  }
+  
+  .btn-register:hover {
+    background-color: #1ed760; /* Brighter green */
+    border-color: #1ed760;
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .app-header {
+      padding: 10px 3%; /* Reduce padding */
+      width: 94%;
+    }
+  
+    .logo-link {
+      font-size: 1.5rem; /* Slightly smaller logo */
+    }
+  
+    .navigation {
+      gap: 15px; /* Reduce gap between nav links */
+      margin: 0 10px;
+    }
+  
+    .nav-link {
+      font-size: 0.9rem;
+    }
+  
+    .user-actions {
+      gap: 10px; /* Reduce gap */
+    }
+  
+    .welcome-message {
+      display: none; /* Hide welcome message text on small screens */
+    }
+    /* Keep username visible if needed - could style differently */
+     .user-actions strong { /* If keeping username */
+         display: inline-block; /* Ensure it's visible */
+         margin-right: 5px;
+     }
+  
+  
+    .btn {
+      padding: 6px 12px; /* Smaller buttons */
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 500px) {
+     .navigation {
+         /* Optionally hide navigation completely or move to a burger menu */
+         /* For simplicity, just reduce further */
+         display: none; /* Hide text nav links on very small screens */
+     }
+  
+     .logo-link {
+         font-size: 1.3rem;
+     }
+  
+     .app-header {
+          justify-content: space-between; /* Ensure logo and actions stay apart */
+     }
+  }

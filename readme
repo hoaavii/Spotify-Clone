@@ -1,0 +1,5 @@
+python3.10 manage.py makemigrations
+python3.10 manage.py migrate
+python3.10 manage.py loaddata music_app/fixtures/admin_user.json
+python3.10 manage.py runserver
+service mysql start

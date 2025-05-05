@@ -1,0 +1,56 @@
+/* src/components/FavoriteSongs/FavoriteSongs.css */
+
+/* Assuming variables from a global scope or previous files */
+:root {
+    --primary-color: #1DB954;
+    --background-dark-secondary: #282828; /* Slightly lighter dark for contrast */
+    --text-light: #ffffff;
+    --text-muted: #a0a0a0;
+    --border-light: rgba(255, 255, 255, 0.1);
+  }
+  
+  .favorites-container {
+    background-color: var(--background-dark-secondary); /* Use a slightly different dark shade */
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px; /* Increased margin */
+    color: var(--text-light);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .favorites-title {
+    color: var(--primary-color); /* Use accent color for the title */
+    font-size: 1.5rem; /* Adjust size as needed */
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-light); /* Separator line below title */
+  }
+  
+  /* Optional: Add a wrapper div if list structure becomes complex */
+  /* .favorites-list { } */
+  
+  .favorite-item {
+    padding: 12px 5px; /* More vertical padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07); /* Subtle separator */
+    font-size: 1rem;
+    transition: background-color 0.2s ease; /* Smooth hover */
+  }
+  
+  .favorite-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
+  
+  /* Add a subtle highlight on hover */
+  .favorite-item:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    /* cursor: pointer; */ /* Uncomment if items become clickable */
+  }
+  
+  /* Styling for the empty state message */
+  .favorites-empty {
+    padding: 20px 5px;
+    color: var(--text-muted); /* Use muted color */
+    font-style: italic;
+    text-align: center; /* Center the message */
+  }

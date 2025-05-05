@@ -1,0 +1,110 @@
+/* General styles for the upload page container */
+.upload-page {
+    max-width: 600px; /* Limit the maximum width */
+    margin: 40px auto; /* Center the container horizontally with top/bottom margin */
+    padding: 30px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: sans-serif; /* Basic font */
+  }
+  
+  /* Heading style */
+  .upload-page h1 {
+    text-align: center; /* Center the heading text */
+    color: #333; /* Darker text color */
+    margin-bottom: 30px; /* Space below the heading */
+  }
+  
+  /* Form element spacing */
+  .upload-page form div {
+    margin-bottom: 20px; /* Add space between form fields */
+  }
+  
+  /* Label styles */
+  .upload-page form label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold; /* Make label text bold */
+    color: #555; /* Slightly lighter text color */
+  }
+  
+  /* Input field styles (assuming inputs without type are text) and file inputs */
+  .upload-page form input:not([type="file"]):not([type="submit"]):not([type="button"]):not([type="reset"]),
+  .upload-page form input[type="file"] {
+    width: 100%; /* Make inputs take full width */
+    padding: 12px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Standard border */
+    border-radius: 4px; /* Slightly rounded corners */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1rem; /* Standard font size */
+  }
+  
+  /* Specific styling for the file input button part */
+  .upload-page form input[type="file"]::file-selector-button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .upload-page form input[type="file"]::file-selector-button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Submit button styles */
+  .upload-page form button[type="submit"] {
+    width: 100%; /* Full width */
+    padding: 12px 20px; /* Padding */
+    background-color: #28a745; /* Green background for songs */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease; /* Smooth transition for hover */
+    margin-top: 10px; /* Add some space above the button */
+  }
+  
+  /* Submit button hover effect */
+  .upload-page form button[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Message area styles */
+  .upload-page p {
+    margin-top: 25px; /* Space above the message */
+    padding: 15px; /* Padding inside the message box */
+    border-radius: 4px; /* Rounded corners */
+    text-align: center; /* Center the message text */
+    font-weight: bold;
+    background-color: #e9ecef; /* Default light grey background */
+    border: 1px solid #ced4da; /* Default border */
+    color: #495057; /* Default text color */
+  }
+  
+  /* Optional: Specific styles for message types (success, pending, error) */
+  /* You would need logic in React to add these classes */
+  /*
+  .upload-page p.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+  
+  .upload-page p.pending {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
+  }
+  
+  .upload-page p.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  */

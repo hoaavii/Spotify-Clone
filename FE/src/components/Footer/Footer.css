@@ -1,0 +1,121 @@
+/* src/components/Footer/Footer.css */
+
+.app-footer {
+    background-color: #191414; /* Dark background, same as header */
+    color: #a0a0a0; /* Muted text color */
+    padding: 50px 5% 20px 5%; /* Top padding, L/R padding, Bottom padding */
+    margin-top: 50px; /* Space above the footer */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribute columns */
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    gap: 30px; /* Space between columns */
+    max-width: 1200px; /* Optional: Constrain width on very large screens */
+    margin: 0 auto 40px auto; /* Center content and add space before bottom bar */
+  }
+  
+  .footer-column {
+    flex: 1; /* Allow columns to share space */
+    min-width: 180px; /* Minimum width before wrapping */
+  }
+  
+  .footer-column h5 {
+    color: #ffffff; /* White color for headings */
+    font-size: 1rem; /* Adjust heading size */
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase; /* Optional: Uppercase headings */
+    letter-spacing: 0.5px; /* Optional: spacing */
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 12px; /* Space between links */
+  }
+  
+  .footer-links a { /* Style both normal <a> and React Router <Link> */
+    color: #a0a0a0; /* Muted link color */
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #1DB954; /* Primary color on hover */
+    text-decoration: underline; /* Optional: underline on hover */
+  }
+  
+  .social-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow icons to wrap */
+    gap: 18px; /* Space between social icons */
+  }
+  
+  .social-links a {
+    color: #a0a0a0; /* Muted icon color */
+    font-size: 1.4rem; /* Size of the icons */
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block; /* Needed for transform */
+  }
+  
+  .social-links a:hover {
+    color: #1DB954; /* Primary color on hover */
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px; /* Space above the copyright line */
+    padding-top: 20px; /* Space below the dividing line */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle dividing line */
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5); /* Very muted color for copyright */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column; /* Stack columns vertically */
+      align-items: center; /* Center columns when stacked */
+      text-align: center; /* Center text within columns */
+      gap: 40px; /* Increase gap when stacked */
+    }
+  
+    .footer-column {
+      min-width: auto; /* Remove min-width when stacked */
+      width: 100%; /* Allow columns to take full width */
+      max-width: 300px; /* Optional: limit width */
+    }
+  
+    .social-links {
+      justify-content: center; /* Center social icons */
+    }
+  
+    .app-footer {
+        padding: 40px 5% 20px 5%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+      .footer-column h5 {
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+      }
+      .footer-links a {
+          font-size: 0.85rem;
+      }
+      .social-links a {
+          font-size: 1.3rem;
+      }
+      .footer-bottom {
+          font-size: 0.8rem;
+      }
+  }

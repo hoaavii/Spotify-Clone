@@ -1,0 +1,88 @@
+/* src/components/AlbumCreator/AlbumCreator.css */
+
+/* Assuming variables from a global scope or previous files */
+:root {
+    --primary-color: #1DB954;
+    --hover-primary: #1ed760;
+    --background-dark-secondary: #282828; /* Background for the container */
+    --input-background: #3e3e3e; /* Slightly lighter input bg */
+    --text-light: #ffffff;
+    --text-muted: #b3b3b3;
+    --border-light: rgba(255, 255, 255, 0.2); /* More visible border */
+    --border-focus: var(--primary-color);
+    --button-disabled-bg: #555;
+  }
+  
+  .album-creator-container {
+    background-color: var(--background-dark-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px; /* Replaced inline style */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    color: var(--text-light);
+  }
+  
+  .album-creator-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: var(--text-light); /* Or var(--primary-color) */
+  }
+  
+  .album-creator-form {
+    display: flex;
+    align-items: center; /* Vertically align input and button */
+    gap: 12px; /* Space between input and button, replaces margin-left */
+  }
+  
+  .album-name-input {
+    flex-grow: 1; /* Input takes up available space */
+    padding: 11px 14px; /* Adjust padding */
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    background-color: var(--input-background);
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .album-name-input::placeholder { /* Style placeholder text */
+      color: var(--text-muted);
+      opacity: 0.8;
+  }
+  
+  .album-name-input:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.25); /* Focus glow */
+  }
+  
+  .create-album-button {
+    padding: 11px 20px; /* Match input height */
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+    flex-shrink: 0; /* Prevent button shrinking */
+  }
+  
+  .create-album-button:hover:not(:disabled) { /* Don't change bg if disabled */
+    background-color: var(--hover-primary);
+  }
+  
+  .create-album-button:active:not(:disabled) {
+      transform: scale(0.98);
+  }
+  
+  
+  .create-album-button:disabled {
+    background-color: var(--button-disabled-bg);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
